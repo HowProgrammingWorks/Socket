@@ -21,7 +21,7 @@ const server = net.createServer((socket) => {
   });
 
   socket.on('drain', () => {
-    console.log('Event: ');
+    console.log('Event: 🤷');
   });
 
   socket.on('end', () => {
