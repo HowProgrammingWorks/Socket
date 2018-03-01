@@ -2,7 +2,7 @@
 
 const net = require('net');
 
-const server = net.createServer((socket) => {
+const connection = (socket) => {
 
   console.dir({
     localAddress: socket.localAddress,
@@ -41,6 +41,10 @@ const server = net.createServer((socket) => {
     console.log('Event: ⌛');
   });
 
-});
+};
+
+const server = net.createServer();
+
+server.on('connection', connection);
 
 server.listen(2000);

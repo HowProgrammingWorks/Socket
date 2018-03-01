@@ -6,6 +6,8 @@ const message = Buffer.from('Hello');
 const client = dgram.createSocket('udp4');
 
 client.send(message, 3000, 'localhost', (err) => {
-  if (err) throw err;
-  client.close();
+  if (err) {
+    client.close();
+    throw err;
+  }
 });

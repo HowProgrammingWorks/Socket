@@ -4,10 +4,10 @@ const net = require('net');
 
 const socket = new net.Socket();
 
-function send(message) {
+const send = (message) => {
   console.log('Client > ' + message);
   socket.write(message);
-}
+};
 
 socket.on('data', (data) => {
   console.log('Server > ' + data.toString());
@@ -34,9 +34,13 @@ socket.on('timeout', () => {
   console.log('Event: ⌛');
 });
 
+socket.on('connect', () => {
+  send('💋');
+  send('💋');
+  send('💋');
+});
+
 socket.connect({
   port: 2000,
-  host: '127.0.0.1',
-}, () => {
-  send('💋');
+  host: '127.0.0.1'
 });
