@@ -4,12 +4,12 @@ const net = require('net');
 
 const socket = new net.Socket();
 
-const send = (message) => {
+const send = message => {
   console.log('Client > ' + message);
   socket.write(message);
 };
 
-socket.on('data', (data) => {
+socket.on('data', data => {
   console.log('Server > ' + data.toString());
 });
 
@@ -25,7 +25,7 @@ socket.on('end', () => {
   });
 });
 
-socket.on('error', (err) => {
+socket.on('error', err => {
   console.log('Event: 💩');
   console.log(err);
 });

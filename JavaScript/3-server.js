@@ -2,7 +2,7 @@
 
 const net = require('net');
 
-const connection = (socket) => {
+const connection = socket => {
 
   console.dir({
     localAddress: socket.localAddress,
@@ -15,7 +15,7 @@ const connection = (socket) => {
 
   socket.write('❤');
 
-  socket.on('data', (data) => {
+  socket.on('data', data => {
     console.log('Event: 📨');
     console.log('Data: ' + data);
   });
@@ -32,7 +32,7 @@ const connection = (socket) => {
     });
   });
 
-  socket.on('error', (err) => {
+  socket.on('error', err => {
     console.log('Event: 💩');
     console.log(err);
   });
