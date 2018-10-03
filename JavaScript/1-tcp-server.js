@@ -3,8 +3,9 @@
 const net = require('net');
 
 net.createServer(socket => {
-  socket.write('❤');
   console.dir(socket.address());
+  socket.setNoDelay(true);
+  socket.write('❤');
   socket.on('data', data => {
     console.log('📨: ' + data);
   });
