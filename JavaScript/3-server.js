@@ -13,11 +13,11 @@ const connection = socket => {
     bufferSize: socket.bufferSize,
   });
 
-  socket.write('❤');
+  socket.write('💗');
 
   socket.on('data', data => {
-    console.log('Event: 📨');
-    console.log('Data: ' + data);
+    console.log('Event: 📨', data);
+    console.log('Data:', data.toString());
   });
 
   socket.on('drain', () => {

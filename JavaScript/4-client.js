@@ -5,12 +5,12 @@ const net = require('net');
 const socket = new net.Socket();
 
 const send = message => {
-  console.log('Client > ' + message);
+  console.log('Client >', message);
   socket.write(message);
 };
 
 socket.on('data', data => {
-  console.log('Server > ' + data.toString());
+  console.log('Server >', data.toString(), data);
 });
 
 socket.on('drain', () => {
@@ -42,5 +42,5 @@ socket.on('connect', () => {
 
 socket.connect({
   port: 2000,
-  host: '127.0.0.1'
+  host: '127.0.0.1',
 });

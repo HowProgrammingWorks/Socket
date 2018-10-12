@@ -5,7 +5,7 @@ const net = require('net');
 const socket = new net.Socket();
 
 socket.on('data', data => {
-  console.log('📨: ' + data);
+  console.log('📨:', data);
 });
 
 socket.connect({
