@@ -2,20 +2,20 @@
 
 const net = require('net');
 
-const onData = data => {
+const onData = (data) => {
   console.log('📨:', data);
 };
 
-net.createServer(socket => {
+net.createServer((socket) => {
   console.dir(socket.address());
   socket.setNoDelay(true);
   socket.write('💗');
   socket.on('data', onData);
-  socket.on('error', err => {
+  socket.on('error', (err) => {
     console.log('Socket error', err);
   });
 }).listen(2000);
 
-server.on('error', err => {
+server.on('error', (err) => {
   console.log('Server error', err);
 });
