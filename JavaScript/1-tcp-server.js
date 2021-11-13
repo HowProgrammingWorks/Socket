@@ -6,7 +6,7 @@ const onData = (data) => {
   console.log('📨:', data);
 };
 
-net.createServer((socket) => {
+const server = net.createServer((socket) => {
   console.dir(socket.address());
   socket.setNoDelay(true);
   socket.write('💗');
