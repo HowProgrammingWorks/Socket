@@ -1,6 +1,6 @@
 'use strict';
 
-const dns = require('dns');
+const dns = require('node:dns');
 
 const options = {
   all: true,

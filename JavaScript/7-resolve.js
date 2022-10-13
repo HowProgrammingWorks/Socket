@@ -1,6 +1,6 @@
 'use strict';
 
-const dns = require('dns');
+const dns = require('node:dns');
 
 dns.resolve('how.programming.works', (err, data) => {
   if (err) {
